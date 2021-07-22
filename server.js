@@ -36,14 +36,14 @@ app.get("/signup", function (req, res) {
   res.render("signup.html");
 });
 
-app.get("/profile", function (req, res) {
+app.get("/home", function (req, res) {
   const sessionCookie = req.cookies.session || "";
 
   admin
     .auth()
     .verifySessionCookie(sessionCookie, true /** checkRevoked */)
     .then(() => {
-      res.render("profile.html");
+      res.render("home.html");
     })
     .catch((error) => {
       res.redirect("/login");
