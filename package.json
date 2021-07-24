@@ -27,5 +27,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "!!!!Under Development!!!!\r IV Editor is online platform to edit videos and images with the help of AI techniques.",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joe10301/Editor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joe10301/Editor/issues"
+  },
+  "homepage": "https://github.com/joe10301/Editor#readme"
 }

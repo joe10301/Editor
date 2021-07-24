@@ -1,7 +1,9 @@
+var download1 = '';
+
 $(document).ready(function () {
 
   const defaultBtn = document.getElementById("default-btn");
-  const customBtn = document.getElementById("custom-btn");
+  const customBtn = document.getElementsByClassName("up")[0];
   customBtn.addEventListener("click", () => {
     defaultBtn.click();
   })
@@ -63,13 +65,35 @@ $(document).ready(function () {
         // Handle unsuccessful uploads
       },
       () => {
-        // Handle successful uploads on complete
-        // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+        // Succesfull upload and Edited Image has been shown
         uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
           console.log('File available at', downloadURL);
+          download1 = downloadURL;
+          document.querySelector('.download').remove();
+          document.querySelector('.textr').remove();
+          document.querySelector(".wp2").style.border = "none";
+          var image = document.createElement('img');
+          var image2 = document.getElementsByClassName('image2')[0];
+          image.src = downloadURL;
+          image2.appendChild(image);
         });
       }
     );
   })
 
+  const downloadBtn = document.getElementById("download-btn");
+  const customBtn1 = document.getElementsByClassName("dw")[0];
+  customBtn1.addEventListener("click", () => {
+    downloadBtn.click();
+    console.log('clicked cus');
+  })
+  downloadBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  const link = document.createElement('a')
+  link.href = download1
+  link.download ='output.jpg'
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+    })
 });
