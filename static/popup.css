@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 380px;
+    max-height: 380px;
+    position: relative;
+    margin: auto;
+}
+
+/* Make the images invisible by default */
+.Containers1 {
+    display: none;
+    align: center;
+
+}
+.image1
+{    
+    height: 70px;
+    width: 70px;
+}
+
+/* forward & Back buttons */
+.Back {
+    cursor: pointer;
+    position: relative;
+    width: 3px;
+    left: -23px;
+    top: -54px;
+    padding: 7px;
+    color: grey;
+    font-weight: bold;
+    font-size: 19px;
+    transition: 0.4s ease;
+    border-radius: 0 5px 5px 0;
+    user-select: none;
+}
+.forward {
+    cursor: pointer;
+    position: relative;
+    right: -333px;
+    top: -54px;
+    width: 3px;
+    padding: 7px;
+    color: grey;
+    font-weight: bold;
+    font-size: 19px;
+    transition: 0.4s ease;
+    border-radius: 0 5px 5px 0;
+    user-select: none;
+}
+
+/* Faint animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.4s;
+    animation-name: fade;
+    animation-duration: 1.4s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .5
+    }
+
+    to {
+        opacity: 2
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .5
+    }
+
+    to {
+        opacity: 2
+    }
+}
+.filters{
+    position: absolute;
+    bottom: 9px;
+    left: 563px;
+}

@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title></title>
   <link rel="stylesheet" href="image.css">
+  <link rel="stylesheet" href="popup.css">
   <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
   <script src="https://use.fontawesome.com/f33be829a6.js"></script>
@@ -71,10 +72,63 @@
       <button id="custom-btn" class="upl-btn dw">Download</button>
     </div>
   </section>
+<section class="filters">
+      <!-- Slideshow container -->
+      <div class="slideshow-container fade">
 
+          <div class="Containers1">
+            <img src="image1.webp" class="image1 f1"  onclick="selectImage(1)">
+            <img src="image2.jpg" class="image1 f2" >
+            <img src="image3.jpg" class="image1 f3" >
+            <img src="image4.jpg" class="image1 f4" >
+            <img src="image5.webp" class="image1 f5" >
+        </div>
+
+        <div class="Containers1">
+            <img src="image1.webp" class="image1">
+            <img src="image3.jpg" class="image1">
+            <img src="image2.jpg" class="image1">
+            <img src="image4.jpg" class="image1">
+            <img src="image5.webp" class="image1">
+        </div>
+
+        <!-- Back and forward buttons -->
+        <a class="Back" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="forward" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+</section>
 
 </body>
 
 <script src="./image.js"></script>
+<script>
+  var slidePosition = 1;
+        SlideShow(slidePosition);
+
+        // forward/Back controls
+        function plusSlides(n) {
+            SlideShow(slidePosition += n);
+        }
+
+        function SlideShow(n) {
+            var i;
+            var slides = document.getElementsByClassName("Containers1");
+            if (n > slides.length) {
+                slidePosition = 1
+            }
+            if (n < 1) {
+                slidePosition = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slidePosition - 1].style.display = "block";
+        }
+
+        function selectImage(val){  
+         console.log(val);
+        }
+</script>
 
 </html>
